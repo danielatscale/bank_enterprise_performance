@@ -1,0 +1,15 @@
+unique_name: dim_risk_rating
+object_type: dataset
+label: dim_risk_rating
+description: 'Regulatory risk-rating master: rating grade rolled up to regulatory class (Pass / Criticized / Classified) with a non-performing flag.'
+connection_id: bank_enterprise_performance_connection
+table: dim_risk_rating
+columns:
+- name: risk_rating_id
+  data_type: long
+- name: rating_grade
+  data_type: string
+- name: regulatory_class
+  data_type: string
+- name: is_nonperforming
+  data_type: boolean

@@ -1,0 +1,207 @@
+unique_name: bank_enterprise_performance
+object_type: model
+label: Bank Enterprise Performance
+description: Unified enterprise-performance model for a US retail + commercial bank. Four lines of business (Retail Deposits, Consumer Lending, Commercial Payments, CRE + Middle Market) over seven conformed dimensions in a constellation (galaxy) schema.
+visible: true
+relationships:
+- unique_name: fact_deposit_snapshot_Date
+  from:
+    dataset: fact_deposit_snapshot
+    join_columns:
+    - snapshot_date
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: fact_deposit_snapshot_Branch
+  from:
+    dataset: fact_deposit_snapshot
+    join_columns:
+    - branch_id
+  to:
+    dimension: Branch Dimension
+    level: Branch
+- unique_name: fact_deposit_snapshot_Product
+  from:
+    dataset: fact_deposit_snapshot
+    join_columns:
+    - product_id
+  to:
+    dimension: Product Dimension
+    level: Product
+- unique_name: fact_loan_origination_Date
+  from:
+    dataset: fact_loan_origination
+    join_columns:
+    - origination_date
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: fact_loan_origination_Branch
+  from:
+    dataset: fact_loan_origination
+    join_columns:
+    - branch_id
+  to:
+    dimension: Branch Dimension
+    level: Branch
+- unique_name: fact_loan_origination_Product
+  from:
+    dataset: fact_loan_origination
+    join_columns:
+    - product_id
+  to:
+    dimension: Product Dimension
+    level: Product
+- unique_name: fact_loan_origination_Customer
+  from:
+    dataset: fact_loan_origination
+    join_columns:
+    - customer_id
+  to:
+    dimension: Customer Dimension
+    level: Customer
+- unique_name: fact_payment_transaction_Date
+  from:
+    dataset: fact_payment_transaction
+    join_columns:
+    - activity_month
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: fact_payment_transaction_Product
+  from:
+    dataset: fact_payment_transaction
+    join_columns:
+    - product_id
+  to:
+    dimension: Product Dimension
+    level: Product
+- unique_name: fact_payment_transaction_Customer
+  from:
+    dataset: fact_payment_transaction
+    join_columns:
+    - customer_id
+  to:
+    dimension: Customer Dimension
+    level: Customer
+- unique_name: fact_loan_facility_snapshot_Date
+  from:
+    dataset: fact_loan_facility_snapshot
+    join_columns:
+    - snapshot_date
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: fact_loan_facility_snapshot_Product
+  from:
+    dataset: fact_loan_facility_snapshot
+    join_columns:
+    - product_id
+  to:
+    dimension: Product Dimension
+    level: Product
+- unique_name: fact_loan_facility_snapshot_Customer
+  from:
+    dataset: fact_loan_facility_snapshot
+    join_columns:
+    - customer_id
+  to:
+    dimension: Customer Dimension
+    level: Customer
+- unique_name: fact_loan_facility_snapshot_LineOfBusiness
+  from:
+    dataset: fact_loan_facility_snapshot
+    join_columns:
+    - lob_id
+  to:
+    dimension: Line of Business Dimension
+    level: Line of Business
+- unique_name: fact_loan_facility_snapshot_RiskRating
+  from:
+    dataset: fact_loan_facility_snapshot
+    join_columns:
+    - risk_rating_id
+  to:
+    dimension: Risk Rating Dimension
+    level: Rating Grade
+dimensions:
+- Deposit Segment Dimension
+metrics:
+- unique_name: EOM Balance
+  folder: Retail Deposits
+- unique_name: Average Daily Balance
+  folder: Retail Deposits
+- unique_name: Deposit Account Count
+  folder: Retail Deposits
+- unique_name: Accounts Opened
+  folder: Retail Deposits
+- unique_name: Accounts Closed
+  folder: Retail Deposits
+- unique_name: Interest Expense
+  folder: Retail Deposits
+- unique_name: Loan Amount Originated
+  folder: Consumer Lending
+- unique_name: Current Loan Balance
+  folder: Consumer Lending
+- unique_name: Loan Count
+  folder: Consumer Lending
+- unique_name: Average Interest Rate
+  folder: Consumer Lending
+- unique_name: Average LTV
+  folder: Consumer Lending
+- unique_name: Delinquent Loan Count
+  folder: Consumer Lending
+- unique_name: 30 DPD Loan Count
+  folder: Consumer Lending
+- unique_name: 60 DPD Loan Count
+  folder: Consumer Lending
+- unique_name: 90+ DPD Loan Count
+  folder: Consumer Lending
+- unique_name: Fee Revenue
+  folder: Commercial Payments
+- unique_name: Payment Volume
+  folder: Commercial Payments
+- unique_name: Transaction Count
+  folder: Commercial Payments
+- unique_name: Active Client Count
+  folder: Commercial Payments
+- unique_name: Commitment Amount
+  folder: CRE + Middle Market
+- unique_name: Outstanding Balance
+  folder: CRE + Middle Market
+- unique_name: Undrawn Amount
+  folder: CRE + Middle Market
+- unique_name: Nonperforming Balance
+  folder: CRE + Middle Market
+- unique_name: Interest Income
+  folder: CRE + Middle Market
+- unique_name: Net Interest Margin (bps)
+  folder: CRE + Middle Market
+- unique_name: Facility Count
+  folder: CRE + Middle Market
+- unique_name: Average Loan Size
+  folder: Consumer Lending
+- unique_name: Any-DPD Rate
+  folder: Consumer Lending
+- unique_name: 90+ DPD Rate
+  folder: Consumer Lending
+- unique_name: NPL Ratio
+  folder: CRE + Middle Market
+- unique_name: Fee Revenue Prior Year
+  folder: Time Intelligence
+- unique_name: Fee Revenue YoY Growth %
+  folder: Time Intelligence
+- unique_name: Fee Revenue YTD
+  folder: Time Intelligence
+- unique_name: EOM Balance Prior Year
+  folder: Time Intelligence
+- unique_name: EOM Balance YoY Growth %
+  folder: Time Intelligence
+- unique_name: Loan Amount Originated Prior Year
+  folder: Time Intelligence
+- unique_name: Loan Amount Originated YoY Growth %
+  folder: Time Intelligence
+- unique_name: Outstanding Balance Prior Year
+  folder: Time Intelligence
+- unique_name: Outstanding Balance YoY Growth %
+  folder: Time Intelligence

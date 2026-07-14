@@ -1,0 +1,13 @@
+unique_name: Nonperforming Balance
+object_type: metric
+label: Nonperforming Balance
+description: 'Outstanding balance on non-performing facilities. Semi-additive: last non-empty over the snapshot date.'
+calculation_method: sum
+format: $#,##0
+semi_additive:
+  position: last
+  relationships:
+  - fact_loan_facility_snapshot_Date
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_facility_snapshot
+column: nonperforming_outstanding

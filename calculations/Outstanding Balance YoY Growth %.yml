@@ -1,0 +1,8 @@
+unique_name: Outstanding Balance YoY Growth %
+object_type: metric_calc
+label: Outstanding Balance YoY Growth %
+description: Year-over-year growth in facility outstanding balances.
+expression: 'CASE WHEN ISEMPTY([Measures].[Outstanding Balance Prior Year]) THEN NULL
+
+  ELSE (([Date Dimension].[Date Hierarchy].CurrentMember, [Measures].[Outstanding Balance]) - [Measures].[Outstanding Balance Prior Year]) / [Measures].[Outstanding Balance Prior Year] END'
+format: percent

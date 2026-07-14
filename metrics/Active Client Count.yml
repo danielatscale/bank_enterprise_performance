@@ -1,0 +1,9 @@
+unique_name: Active Client Count
+object_type: metric
+label: Active Client Count
+description: Distinct commercial clients with payments activity.
+calculation_method: count distinct
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_payment_transaction
+column: customer_id

@@ -1,0 +1,8 @@
+unique_name: NPL Ratio
+object_type: metric_calc
+label: NPL Ratio
+description: Non-performing loans as a share of outstanding balance (Nonperforming Balance / Outstanding Balance).
+expression: 'CASE WHEN ISEMPTY([Measures].[Outstanding Balance]) OR [Measures].[Outstanding Balance] = 0 THEN NULL
+
+  ELSE [Measures].[Nonperforming Balance] / [Measures].[Outstanding Balance] END'
+format: percent

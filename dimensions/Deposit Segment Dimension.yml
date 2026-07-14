@@ -1,0 +1,19 @@
+unique_name: Deposit Segment Dimension
+object_type: dimension
+label: Deposit Segment Dimension
+description: 'Degenerate dimension resident on the deposit snapshot fact: customer segment for retail deposits (Mass Market, Mass Affluent, Private/HNW, Small Business).'
+is_degenerate: true
+hierarchies:
+- unique_name: Deposit Segment Hierarchy
+  label: Deposit Segment Hierarchy
+  folder: Deposit Attributes
+  levels:
+  - unique_name: Deposit Customer Segment
+level_attributes:
+- unique_name: Deposit Customer Segment
+  label: Deposit Segment
+  description: Retail deposit customer segment (degenerate, fact-resident).
+  dataset: fact_deposit_snapshot
+  key_columns:
+  - customer_segment
+  name_column: customer_segment

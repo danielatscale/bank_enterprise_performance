@@ -1,0 +1,28 @@
+unique_name: Line of Business Dimension
+object_type: dimension
+label: Line of Business Dimension
+description: Bank line of business rolled up to segment (Consumer Bank / Commercial Bank). Joins the CRE + Middle Market facility fact directly via lob_id.
+type: standard
+hierarchies:
+- unique_name: Line of Business Hierarchy
+  label: Line of Business Hierarchy
+  folder: Organization Attributes
+  levels:
+  - unique_name: Segment
+  - unique_name: Line of Business
+level_attributes:
+- unique_name: Segment
+  label: Segment
+  description: 'Bank segment: Consumer Bank or Commercial Bank.'
+  dataset: dim_line_of_business
+  key_columns:
+  - segment
+  name_column: segment
+- unique_name: Line of Business
+  label: Line of Business
+  description: Line of business (Retail Deposits, Consumer Lending, Commercial Payments, Commercial Real Estate, Middle Market Lending).
+  is_unique_key: true
+  dataset: dim_line_of_business
+  key_columns:
+  - lob_id
+  name_column: lob_name

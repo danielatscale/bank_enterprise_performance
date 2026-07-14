@@ -1,0 +1,8 @@
+unique_name: EOM Balance YoY Growth %
+object_type: metric_calc
+label: EOM Balance YoY Growth %
+description: Year-over-year growth in end-of-month deposit balances.
+expression: 'CASE WHEN ISEMPTY([Measures].[EOM Balance Prior Year]) THEN NULL
+
+  ELSE (([Date Dimension].[Date Hierarchy].CurrentMember, [Measures].[EOM Balance]) - [Measures].[EOM Balance Prior Year]) / [Measures].[EOM Balance Prior Year] END'
+format: percent

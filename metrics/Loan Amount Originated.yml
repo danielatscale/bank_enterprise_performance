@@ -1,0 +1,9 @@
+unique_name: Loan Amount Originated
+object_type: metric
+label: Loan Amount Originated
+description: Originated principal for loans booked in the period (additive).
+calculation_method: sum
+format: $#,##0
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_origination
+column: loan_amount

@@ -1,0 +1,36 @@
+unique_name: Product Dimension
+object_type: dimension
+label: Product Dimension
+description: Product rollup Line of Business > Product Category > Product, conformed across all four facts. Enables cross-LOB analysis by product and category.
+type: standard
+hierarchies:
+- unique_name: Product Hierarchy
+  label: Product Hierarchy
+  folder: Product Attributes
+  levels:
+  - unique_name: Product Line of Business
+  - unique_name: Product Category
+  - unique_name: Product
+level_attributes:
+- unique_name: Product Line of Business
+  label: Line of Business
+  description: Line of business the product belongs to.
+  dataset: dim_product
+  key_columns:
+  - line_of_business
+  name_column: line_of_business
+- unique_name: Product Category
+  label: Product Category
+  description: Product category (Checking, Mortgage, Home Equity, Card, CRE, C&I, ...).
+  dataset: dim_product
+  key_columns:
+  - product_category
+  name_column: product_category
+- unique_name: Product
+  label: Product
+  description: Individual product.
+  is_unique_key: true
+  dataset: dim_product
+  key_columns:
+  - product_id
+  name_column: product_name

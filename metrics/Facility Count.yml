@@ -1,0 +1,9 @@
+unique_name: Facility Count
+object_type: metric
+label: Facility Count
+description: Distinct CRE / Middle Market facilities.
+calculation_method: count distinct
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_facility_snapshot
+column: facility_id

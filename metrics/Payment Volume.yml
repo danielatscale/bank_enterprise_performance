@@ -1,0 +1,9 @@
+unique_name: Payment Volume
+object_type: metric
+label: Payment Volume
+description: Payments dollar volume processed (additive period flow).
+calculation_method: sum
+format: $#,##0
+unrelated_dimensions_handling: repeat
+dataset: fact_payment_transaction
+column: payment_volume_usd

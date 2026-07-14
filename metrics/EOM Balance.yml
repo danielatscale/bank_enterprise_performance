@@ -1,0 +1,13 @@
+unique_name: EOM Balance
+object_type: metric
+label: EOM Balance
+description: 'End-of-month deposit balance. Semi-additive: last non-empty over the snapshot date, summed across branches/products/segments.'
+calculation_method: sum
+format: $#,##0
+semi_additive:
+  position: last
+  relationships:
+  - fact_deposit_snapshot_Date
+unrelated_dimensions_handling: repeat
+dataset: fact_deposit_snapshot
+column: eom_balance

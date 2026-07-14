@@ -1,0 +1,9 @@
+unique_name: Average Interest Rate
+object_type: metric
+label: Average Interest Rate
+description: Average note rate across loans, in percentage points (e.g. 6.40 = 6.4%).
+calculation_method: average
+format: '0.00'
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_origination
+column: interest_rate_pct

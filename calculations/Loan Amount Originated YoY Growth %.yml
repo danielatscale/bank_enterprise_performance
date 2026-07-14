@@ -1,0 +1,8 @@
+unique_name: Loan Amount Originated YoY Growth %
+object_type: metric_calc
+label: Loan Amount Originated YoY Growth %
+description: Year-over-year growth in loan originations.
+expression: 'CASE WHEN ISEMPTY([Measures].[Loan Amount Originated Prior Year]) THEN NULL
+
+  ELSE (([Date Dimension].[Date Hierarchy].CurrentMember, [Measures].[Loan Amount Originated]) - [Measures].[Loan Amount Originated Prior Year]) / [Measures].[Loan Amount Originated Prior Year] END'
+format: percent

@@ -1,0 +1,61 @@
+unique_name: Branch Dimension
+object_type: dimension
+label: Branch Dimension
+description: 'Branch geography snowflake: Region > State > Market > Branch. Region/State/Market are sourced from dim_market; Branch from dim_branch, joined intra-dimension on market_id. Facts join at the Branch level.'
+type: standard
+hierarchies:
+- unique_name: Branch Geography Hierarchy
+  label: Branch Geography Hierarchy
+  folder: Geography Attributes
+  levels:
+  - unique_name: Branch Region
+  - unique_name: Branch State
+  - unique_name: Market
+  - unique_name: Branch
+    secondary_attributes:
+    - unique_name: Branch Type
+      label: Branch Type
+      description: 'Branch format: Financial Center, In-Store, or Private Bank Office.'
+      dataset: dim_branch
+      name_column: branch_type
+      key_columns:
+      - branch_id
+level_attributes:
+- unique_name: Branch Region
+  label: Region
+  description: Geographic region (Great Lakes, Northeast, Pacific, Rocky Mountains).
+  dataset: dim_market
+  key_columns:
+  - region
+  name_column: region
+- unique_name: Branch State
+  label: State
+  description: US state (15-state footprint).
+  dataset: dim_market
+  key_columns:
+  - state
+  name_column: state
+- unique_name: Market
+  label: Market
+  description: Metro market.
+  is_unique_key: true
+  dataset: dim_market
+  key_columns:
+  - market_id
+  name_column: market_name
+- unique_name: Branch
+  label: Branch
+  description: Individual branch.
+  is_unique_key: true
+  dataset: dim_branch
+  key_columns:
+  - branch_id
+  name_column: branch_name
+relationships:
+- from:
+    dataset: dim_branch
+    join_columns:
+    - market_id
+  to:
+    level: Market
+  type: snowflake

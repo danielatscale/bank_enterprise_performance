@@ -1,0 +1,9 @@
+unique_name: Average LTV
+object_type: metric
+label: Average LTV
+description: Average loan-to-value ratio across loans.
+calculation_method: average
+format: '0.00'
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_origination
+column: ltv

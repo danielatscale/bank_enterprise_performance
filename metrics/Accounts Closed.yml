@@ -1,0 +1,9 @@
+unique_name: Accounts Closed
+object_type: metric
+label: Accounts Closed
+description: Deposit accounts closed during the month — attrition (additive period flow).
+calculation_method: sum
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_deposit_snapshot
+column: accounts_closed

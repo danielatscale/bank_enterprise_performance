@@ -1,0 +1,36 @@
+unique_name: Risk Rating Dimension
+object_type: dimension
+label: Risk Rating Dimension
+description: 'Regulatory credit-quality rating: Regulatory Class (Pass / Criticized / Classified) > Rating Grade. Joins the CRE + Middle Market facility fact via risk_rating_id.'
+type: standard
+hierarchies:
+- unique_name: Risk Rating Hierarchy
+  label: Risk Rating Hierarchy
+  folder: Credit Attributes
+  levels:
+  - unique_name: Regulatory Class
+  - unique_name: Rating Grade
+    secondary_attributes:
+    - unique_name: Is Nonperforming
+      label: Is Nonperforming
+      description: Flags non-performing rating grades.
+      dataset: dim_risk_rating
+      name_column: is_nonperforming
+      key_columns:
+      - risk_rating_id
+level_attributes:
+- unique_name: Regulatory Class
+  label: Regulatory Class
+  description: 'Regulatory classification: Pass, Criticized, or Classified.'
+  dataset: dim_risk_rating
+  key_columns:
+  - regulatory_class
+  name_column: regulatory_class
+- unique_name: Rating Grade
+  label: Rating Grade
+  description: Regulatory rating grade (1-3 Strong ... 9 Doubtful).
+  is_unique_key: true
+  dataset: dim_risk_rating
+  key_columns:
+  - risk_rating_id
+  name_column: rating_grade

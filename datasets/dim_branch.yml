@@ -1,0 +1,19 @@
+unique_name: dim_branch
+object_type: dataset
+label: dim_branch
+description: Branch master (~1,000 branches). Each branch belongs to a market (market_id) and carries branch_type. Leaf table of the branch geography snowflake.
+connection_id: bank_enterprise_performance_connection
+table: dim_branch
+columns:
+- name: branch_id
+  data_type: long
+- name: branch_name
+  data_type: string
+- name: branch_type
+  data_type: string
+- name: market_id
+  data_type: long
+- name: state
+  data_type: string
+- name: region
+  data_type: string

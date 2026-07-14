@@ -1,0 +1,83 @@
+unique_name: Customer Dimension
+object_type: dimension
+label: Customer Dimension
+description: Conformed customer / client dimension. Customer Type > Segment > Customer, plus Industry Vertical and a customer Region > State geography. Joins lending, payments, and facility facts via customer_id.
+type: standard
+hierarchies:
+- unique_name: Customer Hierarchy
+  label: Customer Hierarchy
+  folder: Customer Attributes
+  levels:
+  - unique_name: Customer Type
+  - unique_name: Customer Segment
+  - unique_name: Customer
+    secondary_attributes:
+    - unique_name: Customer Key
+      label: Customer Key
+      description: Business customer key.
+      dataset: dim_customer
+      name_column: customer_key
+      key_columns:
+      - customer_key
+    - unique_name: Revenue Band
+      label: Revenue Band
+      description: Commercial revenue band (N/A for consumer customers).
+      dataset: dim_customer
+      name_column: revenue_band
+      key_columns:
+      - customer_id
+- unique_name: Industry Vertical Hierarchy
+  label: Industry Vertical Hierarchy
+  folder: Customer Attributes
+  levels:
+  - unique_name: Industry Vertical
+- unique_name: Customer Region Hierarchy
+  label: Customer Region Hierarchy
+  folder: Customer Attributes
+  levels:
+  - unique_name: Customer Region
+  - unique_name: Customer State
+level_attributes:
+- unique_name: Customer Type
+  label: Customer Type
+  description: Consumer or Commercial.
+  dataset: dim_customer
+  key_columns:
+  - customer_type
+  name_column: customer_type
+- unique_name: Customer Segment
+  label: Segment
+  description: Customer segment (Mass Market, Mass Affluent, Private/HNW, Small Business, Middle Market, Corporate, Institutional).
+  dataset: dim_customer
+  key_columns:
+  - segment
+  name_column: segment
+- unique_name: Customer
+  label: Customer
+  description: Individual customer / client.
+  is_unique_key: true
+  dataset: dim_customer
+  key_columns:
+  - customer_id
+  name_column: customer_name
+- unique_name: Industry Vertical
+  label: Industry Vertical
+  description: Commercial industry vertical (Healthcare, Technology, Real Estate, ...); N/A for consumer.
+  dataset: dim_customer
+  key_columns:
+  - industry_vertical
+  name_column: industry_vertical
+- unique_name: Customer Region
+  label: Region
+  description: Customer home region.
+  dataset: dim_customer
+  key_columns:
+  - region
+  name_column: region
+- unique_name: Customer State
+  label: State
+  description: Customer home state.
+  dataset: dim_customer
+  key_columns:
+  - state
+  name_column: state

@@ -1,0 +1,7 @@
+unique_name: bank_enterprise_performance_catalog
+object_type: catalog
+label: Bank Enterprise Performance
+description: 'Unified enterprise-performance semantic model for a US retail + commercial bank. A constellation (galaxy) schema: four lines of business (Retail Deposits, Consumer Lending, Commercial Payments, CRE + Middle Market) share seven conformed dimensions so any single area can be analyzed and the whole bank rolled up along the same axes.'
+version: 1.7
+aggressive_agg_promotion: false
+build_speculative_aggs: false

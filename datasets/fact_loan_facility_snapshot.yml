@@ -1,0 +1,36 @@
+unique_name: fact_loan_facility_snapshot
+object_type: dataset
+label: fact_loan_facility_snapshot
+description: CRE + Middle Market monthly snapshot per facility. commitment/outstanding/undrawn are semi-additive balances; interest_income_mtd is additive; nim_bps is a ratio (average, never summed). Adds nonperforming_outstanding for the NPL-balance story.
+connection_id: bank_enterprise_performance_connection
+table: fact_loan_facility_snapshot
+columns:
+- name: facility_snapshot_id
+  data_type: long
+- name: snapshot_date
+  data_type: date
+- name: facility_id
+  data_type: long
+- name: customer_id
+  data_type: long
+- name: product_id
+  data_type: long
+- name: lob_id
+  data_type: long
+- name: risk_rating_id
+  data_type: long
+- name: commitment_amount
+  data_type: double
+- name: outstanding_balance
+  data_type: double
+- name: undrawn_amount
+  data_type: double
+- name: interest_income_mtd
+  data_type: double
+- name: nim_bps
+  data_type: double
+- name: is_nonperforming
+  data_type: boolean
+- name: nonperforming_outstanding
+  data_type: double
+  sql: case when is_nonperforming then outstanding_balance else 0 end

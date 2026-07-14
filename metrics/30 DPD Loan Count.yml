@@ -1,0 +1,9 @@
+unique_name: 30 DPD Loan Count
+object_type: metric
+label: 30 DPD Loan Count
+description: Loans currently 30 days past due. Sum of the is_30_dpd flag.
+calculation_method: sum
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_origination
+column: is_30_dpd

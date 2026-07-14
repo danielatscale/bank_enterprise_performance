@@ -1,0 +1,9 @@
+unique_name: Net Interest Margin (bps)
+object_type: metric
+label: Net Interest Margin (bps)
+description: Net interest margin in basis points. A ratio — averaged, never summed (not semi-additive).
+calculation_method: average
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_facility_snapshot
+column: nim_bps

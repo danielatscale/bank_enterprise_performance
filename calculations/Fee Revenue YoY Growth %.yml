@@ -1,0 +1,8 @@
+unique_name: Fee Revenue YoY Growth %
+object_type: metric_calc
+label: Fee Revenue YoY Growth %
+description: Year-over-year growth in payments fee revenue.
+expression: 'CASE WHEN ISEMPTY([Measures].[Fee Revenue Prior Year]) THEN NULL
+
+  ELSE (([Date Dimension].[Date Hierarchy].CurrentMember, [Measures].[Fee Revenue]) - [Measures].[Fee Revenue Prior Year]) / [Measures].[Fee Revenue Prior Year] END'
+format: percent

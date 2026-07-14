@@ -1,0 +1,9 @@
+unique_name: Current Loan Balance
+object_type: metric
+label: Current Loan Balance
+description: As-of-current outstanding balance across originated loans (additive across loans).
+calculation_method: sum
+format: $#,##0
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_origination
+column: current_balance

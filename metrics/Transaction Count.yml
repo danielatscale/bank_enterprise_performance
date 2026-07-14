@@ -1,0 +1,9 @@
+unique_name: Transaction Count
+object_type: metric
+label: Transaction Count
+description: Number of payment transactions (additive period flow).
+calculation_method: sum
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_payment_transaction
+column: transaction_count

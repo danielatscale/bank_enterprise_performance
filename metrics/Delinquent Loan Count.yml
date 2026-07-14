@@ -1,0 +1,9 @@
+unique_name: Delinquent Loan Count
+object_type: metric
+label: Delinquent Loan Count
+description: Loans currently any-DPD (30/60/90+). Sum of the is_delinquent flag.
+calculation_method: sum
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_origination
+column: is_delinquent

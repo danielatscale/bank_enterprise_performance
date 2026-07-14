@@ -1,0 +1,9 @@
+unique_name: Fee Revenue
+object_type: metric
+label: Fee Revenue
+description: Treasury-management / payments fee revenue (additive period flow).
+calculation_method: sum
+format: $#,##0
+unrelated_dimensions_handling: repeat
+dataset: fact_payment_transaction
+column: fee_revenue_usd

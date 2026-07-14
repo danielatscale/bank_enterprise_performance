@@ -1,0 +1,8 @@
+unique_name: Any-DPD Rate
+object_type: metric_calc
+label: Any-DPD Rate
+description: Share of loans currently any-DPD (Delinquent Loan Count / Loan Count).
+expression: 'CASE WHEN ISEMPTY([Measures].[Loan Count]) OR [Measures].[Loan Count] = 0 THEN NULL
+
+  ELSE [Measures].[Delinquent Loan Count] / [Measures].[Loan Count] END'
+format: percent

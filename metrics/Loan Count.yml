@@ -1,0 +1,9 @@
+unique_name: Loan Count
+object_type: metric
+label: Loan Count
+description: Number of loans originated.
+calculation_method: count non-null
+format: '#,##0'
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_origination
+column: loan_id

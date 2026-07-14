@@ -1,0 +1,31 @@
+unique_name: fact_deposit_snapshot
+object_type: dataset
+label: fact_deposit_snapshot
+description: Retail Deposits monthly snapshot at branch x product x segment x month. eom_balance / avg_daily_balance / account_count are semi-additive (read as-of a snapshot); accounts_opened/closed and interest_expense_mtd are additive period flows. customer_segment is a degenerate dimension.
+connection_id: bank_enterprise_performance_connection
+table: fact_deposit_snapshot
+columns:
+- name: deposit_snapshot_id
+  data_type: long
+- name: snapshot_date
+  data_type: date
+- name: branch_id
+  data_type: long
+- name: market_id
+  data_type: long
+- name: product_id
+  data_type: long
+- name: customer_segment
+  data_type: string
+- name: eom_balance
+  data_type: double
+- name: avg_daily_balance
+  data_type: double
+- name: account_count
+  data_type: long
+- name: accounts_opened
+  data_type: long
+- name: accounts_closed
+  data_type: long
+- name: interest_expense_mtd
+  data_type: double

@@ -1,0 +1,49 @@
+unique_name: fact_loan_origination
+object_type: dataset
+label: fact_loan_origination
+description: Consumer Lending originations, one row per booked loan. loan_amount is additive originated principal; current_balance / delinquency_status are as-of the current month. Adds is_delinquent / is_30/60/90_dpd flag columns for delinquency-rate metrics.
+connection_id: bank_enterprise_performance_connection
+table: fact_loan_origination
+columns:
+- name: loan_id
+  data_type: long
+- name: origination_date
+  data_type: date
+- name: customer_id
+  data_type: long
+- name: branch_id
+  data_type: long
+- name: market_id
+  data_type: long
+- name: product_id
+  data_type: long
+- name: loan_amount
+  data_type: double
+- name: current_balance
+  data_type: double
+- name: interest_rate_pct
+  data_type: double
+- name: term_months
+  data_type: long
+- name: fico_band
+  data_type: string
+- name: ltv
+  data_type: double
+- name: vintage
+  data_type: string
+- name: delinquency_status
+  data_type: string
+- name: days_past_due
+  data_type: long
+- name: is_delinquent
+  data_type: long
+  sql: case when delinquency_status <> 'Current' then 1 else 0 end
+- name: is_30_dpd
+  data_type: long
+  sql: case when delinquency_status = '30 DPD' then 1 else 0 end
+- name: is_60_dpd
+  data_type: long
+  sql: case when delinquency_status = '60 DPD' then 1 else 0 end
+- name: is_90_dpd
+  data_type: long
+  sql: case when delinquency_status = '90+ DPD' then 1 else 0 end
