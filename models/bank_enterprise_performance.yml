@@ -205,3 +205,69 @@ metrics:
   folder: Time Intelligence
 - unique_name: Outstanding Balance YoY Growth %
   folder: Time Intelligence
+aggregates:
+- unique_name: agg_payments_month_product_segment
+  label: Payments by Month x Product Category x Customer Segment
+  metrics:
+  - Fee Revenue
+  - Payment Volume
+  - Transaction Count
+  attributes:
+  - name: Month
+    dimension: Date Dimension
+  - name: Product Category
+    dimension: Product Dimension
+  - name: Customer Segment
+    dimension: Customer Dimension
+- unique_name: agg_originations_month_product_region
+  label: Loan Originations by Month x Product Category x Branch Region
+  metrics:
+  - Loan Amount Originated
+  - Loan Count
+  - Current Loan Balance
+  - Delinquent Loan Count
+  - 30 DPD Loan Count
+  - 60 DPD Loan Count
+  - 90+ DPD Loan Count
+  attributes:
+  - name: Month
+    dimension: Date Dimension
+  - name: Product Category
+    dimension: Product Dimension
+  - name: Branch Region
+    dimension: Branch Dimension
+- unique_name: agg_deposits_day_region_product_segment
+  label: Deposit Snapshots by Day x Branch Region x Product Category x Deposit Segment
+  metrics:
+  - EOM Balance
+  - Average Daily Balance
+  - Deposit Account Count
+  - Accounts Opened
+  - Accounts Closed
+  - Interest Expense
+  attributes:
+  - name: Day
+    dimension: Date Dimension
+  - name: Branch Region
+    dimension: Branch Dimension
+  - name: Product Category
+    dimension: Product Dimension
+  - name: Deposit Customer Segment
+    dimension: Deposit Segment Dimension
+- unique_name: agg_facility_day_lob_risk_product
+  label: Facility Snapshots by Day x Line of Business x Regulatory Class x Product Category
+  metrics:
+  - Outstanding Balance
+  - Nonperforming Balance
+  - Commitment Amount
+  - Undrawn Amount
+  - Interest Income
+  attributes:
+  - name: Day
+    dimension: Date Dimension
+  - name: Line of Business
+    dimension: Line of Business Dimension
+  - name: Regulatory Class
+    dimension: Risk Rating Dimension
+  - name: Product Category
+    dimension: Product Dimension

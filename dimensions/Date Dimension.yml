@@ -14,12 +14,12 @@ hierarchies:
   - unique_name: Quarter
     parallel_periods:
     - key_columns:
-      - prior_year_num
+      - prior_year_quarter_name
       level: Year
   - unique_name: Month
     parallel_periods:
     - key_columns:
-      - prior_year_num
+      - prior_year_year_month
       level: Year
   - unique_name: Day
     secondary_attributes:
