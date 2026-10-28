@@ -1,0 +1,10 @@
+unique_name: Fee Revenue
+object_type: metric
+label: Fee Revenue
+description: Treasury-management and payments fee revenue. Adds up over time.
+calculation_method: sum
+folder: Commercial Payments
+format: $#,##0
+dataset: fact_payment_transaction
+column: fee_revenue_usd
+unrelated_dimensions_handling: repeat

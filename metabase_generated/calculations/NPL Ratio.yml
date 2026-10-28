@@ -1,0 +1,12 @@
+unique_name: NPL Ratio
+object_type: metric_calc
+label: NPL Ratio
+description: Nonperforming Balance / Outstanding Balance, both from the latest monthly snapshot in the period; computed from
+  the balances, never averaged.
+expression: 'CASE WHEN ISEMPTY([Measures].[Outstanding Balance]) THEN NULL
+
+  WHEN [Measures].[Outstanding Balance] = 0 THEN NULL
+
+  ELSE [Measures].[Nonperforming Balance] / [Measures].[Outstanding Balance] END'
+format: 0.00%
+folder: CRE + Middle Market

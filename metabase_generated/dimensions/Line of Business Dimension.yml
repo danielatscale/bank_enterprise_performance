@@ -1,0 +1,30 @@
+unique_name: Line of Business Dimension
+object_type: dimension
+label: Line of Business
+description: Bank Segment (Consumer Bank / Commercial Bank) > Line of Business. Carried by the CRE + Middle Market facility
+  snapshot.
+type: standard
+hierarchies:
+- unique_name: Line of Business Hierarchy
+  label: Line of Business
+  folder: Line of Business Attributes
+  description: Bank Segment > Line of Business.
+  levels:
+  - unique_name: Bank Segment
+  - unique_name: Line of Business
+level_attributes:
+- unique_name: Bank Segment
+  label: Bank Segment
+  description: Consumer Bank or Commercial Bank.
+  dataset: dim_line_of_business
+  name_column: segment
+  key_columns:
+  - segment
+- unique_name: Line of Business
+  label: Line of Business
+  description: Line of business name.
+  dataset: dim_line_of_business
+  name_column: lob_name
+  key_columns:
+  - lob_id
+  is_unique_key: true

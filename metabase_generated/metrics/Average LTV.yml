@@ -1,0 +1,10 @@
+unique_name: Average LTV
+object_type: metric
+label: Average LTV
+description: Average loan-to-value ratio at origination.
+calculation_method: average
+folder: Consumer Lending
+format: '#,##0.00'
+dataset: fact_loan_origination
+column: ltv
+unrelated_dimensions_handling: repeat

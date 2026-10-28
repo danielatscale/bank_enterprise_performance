@@ -1,0 +1,44 @@
+unique_name: dim_date
+object_type: dataset
+label: dim_date
+description: Conformed calendar, one row per day 2023-07-01 to 2026-06-30, with year-ago keys per level for custom parallel
+  periods.
+connection_id: Bank Enterprise Performance Connection
+table: dim_date
+columns:
+- name: date_id
+  data_type: date
+- name: day_of_week
+  data_type: long
+- name: day_name
+  data_type: string
+- name: day_of_month
+  data_type: long
+- name: month_num
+  data_type: long
+- name: month_name
+  data_type: string
+- name: year_month
+  data_type: string
+- name: quarter_num
+  data_type: long
+- name: quarter_name
+  data_type: string
+- name: year_num
+  data_type: long
+- name: is_weekend
+  data_type: boolean
+- name: is_month_end
+  data_type: boolean
+- name: quarter_key
+  data_type: long
+  sql: year_num * 10 + quarter_num
+- name: prior_year_quarter_key
+  data_type: long
+  sql: (year_num - 1) * 10 + quarter_num
+- name: prior_year_month
+  data_type: string
+  sql: CONCAT(CAST(year_num - 1 AS STRING), SUBSTR(year_month, 5))
+- name: prior_year_date
+  data_type: date
+  sql: DATE_SUB(date_id, interval 1 year)

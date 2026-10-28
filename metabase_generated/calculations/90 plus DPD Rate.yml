@@ -1,0 +1,11 @@
+unique_name: 90+ DPD Rate
+object_type: metric_calc
+label: 90+ DPD Rate
+description: 'Share of loans 90+ days past due: 90+ DPD Loan Count / Loan Count, computed from totals.'
+expression: 'CASE WHEN ISEMPTY([Measures].[Loan Count]) THEN NULL
+
+  WHEN [Measures].[Loan Count] = 0 THEN NULL
+
+  ELSE [Measures].[90+ DPD Loan Count] / [Measures].[Loan Count] END'
+format: 0.00%
+folder: Consumer Lending

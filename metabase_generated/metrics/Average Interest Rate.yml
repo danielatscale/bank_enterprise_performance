@@ -1,0 +1,10 @@
+unique_name: Average Interest Rate
+object_type: metric
+label: Average Interest Rate
+description: Average note rate in percentage points (6.40 = 6.4%).
+calculation_method: average
+folder: Consumer Lending
+format: '#,##0.00'
+dataset: fact_loan_origination
+column: interest_rate_pct
+unrelated_dimensions_handling: repeat

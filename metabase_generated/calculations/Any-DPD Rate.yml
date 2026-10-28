@@ -1,0 +1,11 @@
+unique_name: Any-DPD Rate
+object_type: metric_calc
+label: Any-DPD Rate
+description: 'Share of loans currently past due: Delinquent Loan Count / Loan Count, computed from totals.'
+expression: 'CASE WHEN ISEMPTY([Measures].[Loan Count]) THEN NULL
+
+  WHEN [Measures].[Loan Count] = 0 THEN NULL
+
+  ELSE [Measures].[Delinquent Loan Count] / [Measures].[Loan Count] END'
+format: 0.00%
+folder: Consumer Lending

@@ -1,0 +1,20 @@
+unique_name: Deposit Customer Segment Dimension
+object_type: dimension
+label: Deposit Customer Segment
+description: Retail deposit customer segment stored on the deposit snapshot.
+is_degenerate: true
+hierarchies:
+- unique_name: Deposit Customer Segment Hierarchy
+  label: Deposit Customer Segment
+  folder: Deposit Attributes
+  levels:
+  - unique_name: Deposit Customer Segment
+level_attributes:
+- unique_name: Deposit Customer Segment
+  label: Deposit Customer Segment
+  description: Retail deposit customer segment stored on the deposit snapshot.
+  dataset: fact_deposit_snapshot
+  name_column: customer_segment
+  key_columns:
+  - customer_segment
+  sort_column: customer_segment

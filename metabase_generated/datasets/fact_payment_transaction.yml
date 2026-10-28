@@ -1,0 +1,21 @@
+unique_name: fact_payment_transaction
+object_type: dataset
+label: fact_payment_transaction
+description: Commercial Payments monthly activity (client x product x month); all amounts are flows.
+connection_id: Bank Enterprise Performance Connection
+table: fact_payment_transaction
+columns:
+- name: payment_id
+  data_type: long
+- name: activity_month
+  data_type: date
+- name: customer_id
+  data_type: long
+- name: product_id
+  data_type: long
+- name: transaction_count
+  data_type: long
+- name: payment_volume_usd
+  data_type: decimal
+- name: fee_revenue_usd
+  data_type: decimal

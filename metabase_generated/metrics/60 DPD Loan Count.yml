@@ -1,0 +1,10 @@
+unique_name: 60 DPD Loan Count
+object_type: metric
+label: 60 DPD Loan Count
+description: Loans currently 60 days past due.
+calculation_method: sum
+folder: Consumer Lending
+format: '#,##0'
+dataset: fact_loan_origination
+column: is_60_dpd
+unrelated_dimensions_handling: repeat

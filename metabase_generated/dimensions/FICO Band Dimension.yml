@@ -1,0 +1,20 @@
+unique_name: FICO Band Dimension
+object_type: dimension
+label: FICO Band
+description: Borrower FICO band at origination.
+is_degenerate: true
+hierarchies:
+- unique_name: FICO Band Hierarchy
+  label: FICO Band
+  folder: Loan Attributes
+  levels:
+  - unique_name: FICO Band
+level_attributes:
+- unique_name: FICO Band
+  label: FICO Band
+  description: Borrower FICO band at origination.
+  dataset: fact_loan_origination
+  name_column: fico_band
+  key_columns:
+  - fico_band
+  sort_column: fico_band

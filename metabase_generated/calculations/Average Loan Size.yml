@@ -1,0 +1,11 @@
+unique_name: Average Loan Size
+object_type: metric_calc
+label: Average Loan Size
+description: 'Average originated principal per loan: Loan Amount Originated / Loan Count, computed from totals.'
+expression: 'CASE WHEN ISEMPTY([Measures].[Loan Count]) THEN NULL
+
+  WHEN [Measures].[Loan Count] = 0 THEN NULL
+
+  ELSE [Measures].[Loan Amount Originated] / [Measures].[Loan Count] END'
+format: $#,##0
+folder: Consumer Lending

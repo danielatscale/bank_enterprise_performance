@@ -1,0 +1,10 @@
+unique_name: Loan Amount Originated Prior Year
+object_type: metric_calc
+label: Loan Amount Originated Prior Year
+description: Loan Amount Originated for the same period one year earlier.
+expression: 'CASE WHEN ISEMPTY([Measures].[Loan Amount Originated]) THEN NULL
+
+  ELSE (ParallelPeriod([Date Dimension].[Date Hierarchy].[Year], 1, [Date Dimension].[Date Hierarchy].CurrentMember), [Measures].[Loan
+  Amount Originated]) END'
+format: $#,##0
+folder: Consumer Lending

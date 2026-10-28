@@ -1,0 +1,38 @@
+unique_name: Product Dimension
+object_type: dimension
+label: Product
+description: 24 banking products across all lines of business. Product Line of Business > Product Category > Product.
+type: standard
+hierarchies:
+- unique_name: Product Hierarchy
+  label: Product
+  folder: Product Attributes
+  description: Product Line of Business > Product Category > Product.
+  levels:
+  - unique_name: Product Line of Business
+  - unique_name: Product Category
+  - unique_name: Product
+level_attributes:
+- unique_name: Product Line of Business
+  label: Product Line of Business
+  description: Line of business the product belongs to.
+  dataset: dim_product
+  name_column: line_of_business
+  key_columns:
+  - line_of_business
+- unique_name: Product Category
+  label: Product Category
+  description: Product category, e.g. Checking, Mortgage, ACH, CRE, C&I.
+  dataset: dim_product
+  name_column: product_category
+  key_columns:
+  - line_of_business
+  - product_category
+- unique_name: Product
+  label: Product
+  description: Product name.
+  dataset: dim_product
+  name_column: product_name
+  key_columns:
+  - product_id
+  is_unique_key: true

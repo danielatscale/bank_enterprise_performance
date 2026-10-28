@@ -1,0 +1,10 @@
+unique_name: Interest Income
+object_type: metric
+label: Interest Income
+description: Interest income earned on facilities. Adds up over time.
+calculation_method: sum
+folder: CRE + Middle Market
+format: $#,##0
+dataset: fact_loan_facility_snapshot
+column: interest_income_mtd
+unrelated_dimensions_handling: repeat

@@ -1,0 +1,10 @@
+unique_name: Loan Amount Originated
+object_type: metric
+label: Loan Amount Originated
+description: Principal of consumer loans booked in the period, dated by origination date. Adds up over time.
+calculation_method: sum
+folder: Consumer Lending
+format: $#,##0
+dataset: fact_loan_origination
+column: loan_amount
+unrelated_dimensions_handling: repeat

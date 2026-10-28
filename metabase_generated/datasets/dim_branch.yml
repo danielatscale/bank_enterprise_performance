@@ -1,0 +1,19 @@
+unique_name: dim_branch
+object_type: dataset
+label: dim_branch
+description: About 1,000 branches; each belongs to one market (geography comes from the market).
+connection_id: Bank Enterprise Performance Connection
+table: dim_branch
+columns:
+- name: branch_id
+  data_type: long
+- name: branch_name
+  data_type: string
+- name: branch_type
+  data_type: string
+- name: market_id
+  data_type: long
+- name: state
+  data_type: string
+- name: region
+  data_type: string

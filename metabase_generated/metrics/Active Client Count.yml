@@ -1,0 +1,10 @@
+unique_name: Active Client Count
+object_type: metric
+label: Active Client Count
+description: Commercial clients with any payments activity in the period (distinct over the whole period; not additive).
+calculation_method: count distinct
+folder: Commercial Payments
+format: '#,##0'
+dataset: fact_payment_transaction
+column: customer_id
+unrelated_dimensions_handling: repeat

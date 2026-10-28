@@ -1,0 +1,10 @@
+unique_name: Payment Volume
+object_type: metric
+label: Payment Volume
+description: Dollar volume of payments processed. Adds up over time.
+calculation_method: sum
+folder: Commercial Payments
+format: $#,##0
+dataset: fact_payment_transaction
+column: payment_volume_usd
+unrelated_dimensions_handling: repeat

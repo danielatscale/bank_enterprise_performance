@@ -1,0 +1,15 @@
+unique_name: dim_market
+object_type: dataset
+label: dim_market
+description: 'Metro markets in the bank''s 15-state footprint: Region > State > Market.'
+connection_id: Bank Enterprise Performance Connection
+table: dim_market
+columns:
+- name: market_id
+  data_type: long
+- name: market_name
+  data_type: string
+- name: state
+  data_type: string
+- name: region
+  data_type: string

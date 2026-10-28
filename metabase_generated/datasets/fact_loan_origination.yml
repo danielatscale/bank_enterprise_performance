@@ -1,0 +1,50 @@
+unique_name: fact_loan_origination
+object_type: dataset
+label: fact_loan_origination
+description: Consumer loan originations, one row per loan, dated by origination date; delinquency and current balance as of
+  June 2026.
+connection_id: Bank Enterprise Performance Connection
+table: fact_loan_origination
+columns:
+- name: loan_id
+  data_type: long
+- name: origination_date
+  data_type: date
+- name: customer_id
+  data_type: long
+- name: branch_id
+  data_type: long
+- name: market_id
+  data_type: long
+- name: product_id
+  data_type: long
+- name: loan_amount
+  data_type: decimal
+- name: current_balance
+  data_type: decimal
+- name: interest_rate_pct
+  data_type: double
+- name: term_months
+  data_type: long
+- name: fico_band
+  data_type: string
+- name: ltv
+  data_type: double
+- name: vintage
+  data_type: string
+- name: delinquency_status
+  data_type: string
+- name: days_past_due
+  data_type: long
+- name: is_delinquent
+  data_type: long
+  sql: CASE WHEN delinquency_status <> 'Current' THEN 1 ELSE 0 END
+- name: is_30_dpd
+  data_type: long
+  sql: CASE WHEN delinquency_status = '30 DPD' THEN 1 ELSE 0 END
+- name: is_60_dpd
+  data_type: long
+  sql: CASE WHEN delinquency_status = '60 DPD' THEN 1 ELSE 0 END
+- name: is_90_plus_dpd
+  data_type: long
+  sql: CASE WHEN delinquency_status = '90+ DPD' THEN 1 ELSE 0 END

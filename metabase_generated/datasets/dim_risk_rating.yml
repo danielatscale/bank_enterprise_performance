@@ -1,0 +1,15 @@
+unique_name: dim_risk_rating
+object_type: dataset
+label: dim_risk_rating
+description: 'Regulatory credit risk ratings: Regulatory Class > Rating Grade.'
+connection_id: Bank Enterprise Performance Connection
+table: dim_risk_rating
+columns:
+- name: risk_rating_id
+  data_type: long
+- name: rating_grade
+  data_type: string
+- name: regulatory_class
+  data_type: string
+- name: is_nonperforming
+  data_type: boolean

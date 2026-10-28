@@ -1,0 +1,10 @@
+unique_name: Outstanding Balance Prior Year
+object_type: metric_calc
+label: Outstanding Balance Prior Year
+description: Outstanding Balance for the same period one year earlier.
+expression: 'CASE WHEN ISEMPTY([Measures].[Outstanding Balance]) THEN NULL
+
+  ELSE (ParallelPeriod([Date Dimension].[Date Hierarchy].[Year], 1, [Date Dimension].[Date Hierarchy].CurrentMember), [Measures].[Outstanding
+  Balance]) END'
+format: $#,##0
+folder: CRE + Middle Market

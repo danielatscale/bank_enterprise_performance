@@ -1,0 +1,91 @@
+unique_name: Customer Dimension
+object_type: dimension
+label: Customer
+description: Consumer and commercial customers. Customer region is where the customer is located, separate from branch region.
+type: standard
+hierarchies:
+- unique_name: Customer Hierarchy
+  label: Customer
+  description: Customer Type > Customer Segment > Customer.
+  folder: Customer Attributes
+  levels:
+  - unique_name: Customer Type
+  - unique_name: Customer Segment
+  - unique_name: Customer
+    secondary_attributes:
+    - unique_name: Customer Key
+      label: Customer Key
+      description: Business customer key.
+      dataset: dim_customer
+      name_column: customer_key
+      key_columns:
+      - customer_key
+    - unique_name: Revenue Band
+      label: Revenue Band
+      description: Commercial client revenue band; 'N/A' for consumers.
+      dataset: dim_customer
+      name_column: revenue_band
+      key_columns:
+      - revenue_band
+- unique_name: Customer Location
+  label: Customer Location
+  description: Customer Region > Customer State (where the customer is located).
+  folder: Customer Attributes
+  levels:
+  - unique_name: Customer Region
+  - unique_name: Customer State
+  - unique_name: Customer
+    is_hidden: true
+- unique_name: Industry Vertical Hierarchy
+  label: Industry Vertical
+  description: Industry of commercial clients; 'N/A' for consumers.
+  folder: Customer Attributes
+  levels:
+  - unique_name: Industry Vertical
+  - unique_name: Customer
+    is_hidden: true
+level_attributes:
+- unique_name: Customer Type
+  label: Customer Type
+  description: Consumer or Commercial.
+  dataset: dim_customer
+  name_column: customer_type
+  key_columns:
+  - customer_type
+- unique_name: Customer Segment
+  label: Customer Segment
+  description: 'Consumer: Mass Market, Mass Affluent, Private / HNW, Small Business. Commercial: Middle Market, Corporate,
+    Institutional.'
+  dataset: dim_customer
+  name_column: segment
+  key_columns:
+  - segment
+- unique_name: Customer
+  label: Customer
+  description: Customer or client name.
+  dataset: dim_customer
+  name_column: customer_name
+  key_columns:
+  - customer_id
+  is_unique_key: true
+- unique_name: Customer Region
+  label: Customer Region
+  description: Region where the customer is located.
+  dataset: dim_customer
+  name_column: region
+  key_columns:
+  - region
+- unique_name: Customer State
+  label: Customer State
+  description: State where the customer is located.
+  dataset: dim_customer
+  name_column: state
+  key_columns:
+  - state
+- unique_name: Industry Vertical
+  label: Industry Vertical
+  description: Healthcare, Technology, Real Estate, Energy, Industrial, Public Sector, Consumer; 'N/A' for consumers.
+  dataset: dim_customer
+  name_column: industry_vertical
+  key_columns:
+  - industry_vertical

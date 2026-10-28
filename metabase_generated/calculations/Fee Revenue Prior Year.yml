@@ -1,0 +1,10 @@
+unique_name: Fee Revenue Prior Year
+object_type: metric_calc
+label: Fee Revenue Prior Year
+description: Fee Revenue for the same period one year earlier.
+expression: 'CASE WHEN ISEMPTY([Measures].[Fee Revenue]) THEN NULL
+
+  ELSE (ParallelPeriod([Date Dimension].[Date Hierarchy].[Year], 1, [Date Dimension].[Date Hierarchy].CurrentMember), [Measures].[Fee
+  Revenue]) END'
+format: $#,##0
+folder: Commercial Payments

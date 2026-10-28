@@ -1,0 +1,10 @@
+unique_name: Transaction Count
+object_type: metric
+label: Transaction Count
+description: Number of payment transactions. Adds up over time.
+calculation_method: sum
+folder: Commercial Payments
+format: '#,##0'
+dataset: fact_payment_transaction
+column: transaction_count
+unrelated_dimensions_handling: repeat
