@@ -1,20 +1,20 @@
 unique_name: Delinquency Status Dimension
 object_type: dimension
-label: Delinquency Status
-description: Current, 30 DPD, 60 DPD, or 90+ DPD as of the latest month.
+label: Delinquency Status Dimension
+description: Current, 30 DPD, 60 DPD, or 90+ DPD, as of the latest month (June 2026).
 is_degenerate: true
 hierarchies:
-- unique_name: Delinquency Status Hierarchy
+- unique_name: Delinquency Status
   label: Delinquency Status
-  folder: Loan Attributes
+  description: Current, 30 DPD, 60 DPD, or 90+ DPD, as of the latest month (June 2026).
+  folder: Consumer Lending Attributes
   levels:
   - unique_name: Delinquency Status
 level_attributes:
 - unique_name: Delinquency Status
   label: Delinquency Status
-  description: Current, 30 DPD, 60 DPD, or 90+ DPD as of the latest month.
+  description: Current, 30 DPD, 60 DPD, or 90+ DPD, as of the latest month (June 2026).
   dataset: fact_loan_origination
   name_column: delinquency_status
   key_columns:
   - delinquency_status
-  sort_column: delinquency_status

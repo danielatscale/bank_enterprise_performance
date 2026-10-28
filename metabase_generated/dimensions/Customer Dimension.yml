@@ -1,18 +1,25 @@
 unique_name: Customer Dimension
 object_type: dimension
-label: Customer
+label: Customer Dimension
 description: Consumer and commercial customers. Customer region is where the customer is located, separate from branch region.
 type: standard
 hierarchies:
 - unique_name: Customer Hierarchy
   label: Customer
-  description: Customer Type > Customer Segment > Customer.
+  description: "Customer Type > Customer Segment > Customer."
   folder: Customer Attributes
   levels:
   - unique_name: Customer Type
   - unique_name: Customer Segment
   - unique_name: Customer
     secondary_attributes:
+    - unique_name: Revenue Band
+      label: Revenue Band
+      description: Commercial client revenue band; N/A for consumers.
+      dataset: dim_customer
+      name_column: revenue_band
+      key_columns:
+      - revenue_band
     - unique_name: Customer Key
       label: Customer Key
       description: Business customer key.
@@ -20,25 +27,25 @@ hierarchies:
       name_column: customer_key
       key_columns:
       - customer_key
-    - unique_name: Revenue Band
-      label: Revenue Band
-      description: Commercial client revenue band; 'N/A' for consumers.
+    - unique_name: Acquisition Date
+      label: Acquisition Date
+      description: Date the customer relationship started.
       dataset: dim_customer
-      name_column: revenue_band
+      name_column: acquisition_date
       key_columns:
-      - revenue_band
+      - acquisition_date
 - unique_name: Customer Location
   label: Customer Location
-  description: Customer Region > Customer State (where the customer is located).
+  description: "Customer Region > Customer State (where the customer is located)."
   folder: Customer Attributes
   levels:
   - unique_name: Customer Region
   - unique_name: Customer State
   - unique_name: Customer
     is_hidden: true
-- unique_name: Industry Vertical Hierarchy
+- unique_name: Industry
   label: Industry Vertical
-  description: Industry of commercial clients; 'N/A' for consumers.
+  description: Industry of commercial clients; N/A for consumers.
   folder: Customer Attributes
   levels:
   - unique_name: Industry Vertical
@@ -54,8 +61,7 @@ level_attributes:
   - customer_type
 - unique_name: Customer Segment
   label: Customer Segment
-  description: 'Consumer: Mass Market, Mass Affluent, Private / HNW, Small Business. Commercial: Middle Market, Corporate,
-    Institutional.'
+  description: "Consumer: Mass Market, Mass Affluent, Private / HNW, Small Business. Commercial: Middle Market, Corporate, Institutional."
   dataset: dim_customer
   name_column: segment
   key_columns:
@@ -63,11 +69,11 @@ level_attributes:
 - unique_name: Customer
   label: Customer
   description: Customer or client name.
+  is_unique_key: true
   dataset: dim_customer
   name_column: customer_name
   key_columns:
   - customer_id
-  is_unique_key: true
 - unique_name: Customer Region
   label: Customer Region
   description: Region where the customer is located.
@@ -84,7 +90,7 @@ level_attributes:
   - state
 - unique_name: Industry Vertical
   label: Industry Vertical
-  description: Healthcare, Technology, Real Estate, Energy, Industrial, Public Sector, Consumer; 'N/A' for consumers.
+  description: Industry of commercial clients.
   dataset: dim_customer
   name_column: industry_vertical
   key_columns:

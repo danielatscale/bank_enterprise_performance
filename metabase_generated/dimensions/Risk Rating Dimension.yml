@@ -1,13 +1,13 @@
 unique_name: Risk Rating Dimension
 object_type: dimension
-label: Risk Rating
-description: 'Regulatory credit risk rating of commercial facilities: Regulatory Class > Rating Grade.'
+label: Risk Rating Dimension
+description: "Regulatory credit risk rating of commercial facilities. Regulatory Class > Rating Grade."
 type: standard
 hierarchies:
 - unique_name: Risk Rating Hierarchy
   label: Risk Rating
-  folder: Risk Attributes
-  description: Regulatory Class (Pass / Criticized / Classified) > Rating Grade.
+  description: "Regulatory Class (Pass / Criticized / Classified) > Rating Grade."
+  folder: Credit Risk Attributes
   levels:
   - unique_name: Regulatory Class
   - unique_name: Rating Grade
@@ -29,9 +29,9 @@ level_attributes:
   - regulatory_class
 - unique_name: Rating Grade
   label: Rating Grade
-  description: 1-3 Strong, 4-6 Acceptable, 7 Special Mention, 8 Substandard, 9 Doubtful.
+  description: "Regulatory rating grade: 1-3 Strong, 4-6 Acceptable, 7 Special Mention, 8 Substandard, 9 Doubtful."
+  is_unique_key: true
   dataset: dim_risk_rating
   name_column: rating_grade
   key_columns:
   - risk_rating_id
-  is_unique_key: true

@@ -4,7 +4,7 @@ label: 30 DPD Loan Count
 description: Loans currently 30 days past due.
 calculation_method: sum
 folder: Consumer Lending
-format: '#,##0'
+format: "#,##0"
+unrelated_dimensions_handling: repeat
 dataset: fact_loan_origination
 column: is_30_dpd
-unrelated_dimensions_handling: repeat

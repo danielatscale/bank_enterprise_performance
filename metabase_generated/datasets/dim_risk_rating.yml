@@ -1,8 +1,8 @@
 unique_name: dim_risk_rating
 object_type: dataset
 label: dim_risk_rating
-description: 'Regulatory credit risk ratings: Regulatory Class > Rating Grade.'
-connection_id: Bank Enterprise Performance Connection
+description: Regulatory credit risk ratings for commercial facilities.
+connection_id: Connection - Bank Enterprise Performance
 table: dim_risk_rating
 columns:
 - name: risk_rating_id

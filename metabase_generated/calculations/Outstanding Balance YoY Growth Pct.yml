@@ -1,12 +1,6 @@
-unique_name: Outstanding Balance YoY Growth %
+unique_name: Outstanding Balance YoY Growth Pct
 object_type: metric_calc
-label: Outstanding Balance YoY Growth %
-description: (Outstanding Balance - same period last year) / same period last year.
-expression: 'CASE WHEN ISEMPTY([Measures].[Outstanding Balance Prior Year]) THEN NULL
-
-  WHEN [Measures].[Outstanding Balance Prior Year] = 0 THEN NULL
-
-  ELSE ([Measures].[Outstanding Balance] - [Measures].[Outstanding Balance Prior Year]) / [Measures].[Outstanding Balance
-  Prior Year] END'
-format: 0.00%
-folder: CRE + Middle Market
+label: "Outstanding Balance YoY Growth %"
+description: "Year-over-year growth: (Outstanding Balance - Outstanding Balance Prior Year) / Outstanding Balance Prior Year."
+expression: "CASE WHEN ISEMPTY([Measures].[Outstanding Balance Prior Year]) THEN NULL\nELSE Divide([Measures].[Outstanding Balance] - [Measures].[Outstanding Balance Prior Year], [Measures].[Outstanding Balance Prior Year]) END"
+format: percent

@@ -1,6 +1,6 @@
-unique_name: Bank Enterprise Performance Connection
+unique_name: Connection - Bank Enterprise Performance
+label: Connection - Bank Enterprise Performance
 object_type: connection
-label: Bank Enterprise Performance Connection
 as_connection: BigQuery
 database: atscale-sales-demo
 schema: BANK_ENTERPRISE_PERFORMANCE

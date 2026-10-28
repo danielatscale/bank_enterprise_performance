@@ -1,9 +1,8 @@
 unique_name: fact_loan_facility_snapshot
 object_type: dataset
 label: fact_loan_facility_snapshot
-description: CRE + Middle Market facility monthly snapshot (facility x month, dated the 1st). Commitment/outstanding/undrawn
-  are point-in-time.
-connection_id: Bank Enterprise Performance Connection
+description: CRE + Middle Market facility monthly snapshot (facility x month, dated the 1st).
+connection_id: Connection - Bank Enterprise Performance
 table: fact_loan_facility_snapshot
 columns:
 - name: facility_snapshot_id

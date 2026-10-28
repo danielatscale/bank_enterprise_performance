@@ -1,14 +1,14 @@
 unique_name: Undrawn Amount
 object_type: metric
 label: Undrawn Amount
-description: 'Undrawn facility availability. Point-in-time: latest monthly snapshot in the period.'
+description: "Undrawn facility availability. Point-in-time: latest monthly snapshot in the period, never added across months."
 calculation_method: sum
 folder: CRE + Middle Market
-format: $#,##0
-dataset: fact_loan_facility_snapshot
-column: undrawn_amount
-unrelated_dimensions_handling: repeat
+format: "$#,##0"
 semi_additive:
   position: last
   relationships:
   - fact_loan_facility_snapshot_Date_Dimension
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_facility_snapshot
+column: undrawn_amount

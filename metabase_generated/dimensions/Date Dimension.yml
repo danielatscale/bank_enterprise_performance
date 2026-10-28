@@ -1,21 +1,20 @@
 unique_name: Date Dimension
 object_type: dimension
-label: Date
-description: Conformed calendar shared by all four lines of business. Calendar Year > Quarter > Month > Day (fiscal year =
-  calendar year). Snapshots are dated the 1st of each month.
+label: Date Dimension
+description: "Conformed calendar shared by all four lines of business. Year > Quarter > Month > Day; fiscal year = calendar year. Deposit and facility snapshots are dated the 1st of each month."
 type: time
 hierarchies:
 - unique_name: Date Hierarchy
   label: Calendar
-  description: Year > Quarter > Month > Day.
+  description: "Calendar rollup Year > Quarter > Month > Day."
   folder: Date Attributes
-  filter_empty: 'yes'
   levels:
   - unique_name: Year
   - unique_name: Quarter
     parallel_periods:
     - key_columns:
-      - prior_year_quarter_key
+      - prior_year_num
+      - quarter_num
       level: Year
     secondary_attributes:
     - unique_name: Quarter Number
@@ -25,43 +24,31 @@ hierarchies:
       name_column: quarter_num
       key_columns:
       - quarter_num
-      sort_column: quarter_num
   - unique_name: Month
     parallel_periods:
     - key_columns:
-      - prior_year_month
+      - prior_year_num
+      - month_num
       level: Year
     secondary_attributes:
-    - unique_name: Month of Year
+    - unique_name: Month Name
       label: Month Name
-      description: Month name (January..December), sorted by month number.
+      description: Month name (January..December), without the year.
       dataset: dim_date
       name_column: month_name
       key_columns:
-      - month_num
+      - month_name
       sort_column: month_num
   - unique_name: Day
-    parallel_periods:
-    - key_columns:
-      - prior_year_date
-      level: Year
     secondary_attributes:
-    - unique_name: Day of Week
+    - unique_name: Day Name
       label: Day Name
-      description: Day of week name (Monday..Sunday), sorted by day number.
+      description: Day of week name (Monday..Sunday).
       dataset: dim_date
       name_column: day_name
       key_columns:
-      - day_of_week
+      - day_name
       sort_column: day_of_week
-    - unique_name: Day of Month
-      label: Day Of Month
-      description: Day of month (1-31).
-      dataset: dim_date
-      name_column: day_of_month
-      key_columns:
-      - day_of_month
-      sort_column: day_of_month
 level_attributes:
 - unique_name: Year
   label: Year
@@ -74,12 +61,13 @@ level_attributes:
   time_unit: year
 - unique_name: Quarter
   label: Quarter
-  description: Year-qualified quarter, e.g. 'Q1 2025', sorted chronologically.
+  description: Year-qualified quarter (e.g. Q1 2025), sorted chronologically.
   dataset: dim_date
   name_column: quarter_name
   key_columns:
-  - quarter_key
-  sort_column: quarter_key
+  - year_num
+  - quarter_num
+  sort_column: quarter_sort
   time_unit: quarter
 - unique_name: Month
   label: Month
@@ -87,16 +75,17 @@ level_attributes:
   dataset: dim_date
   name_column: year_month
   key_columns:
-  - year_month
+  - year_num
+  - month_num
   sort_column: year_month
   time_unit: month
 - unique_name: Day
-  label: Date
-  description: Calendar day; the join grain for every fact.
+  label: Day
+  description: Calendar day. Snapshots are dated the 1st of each month.
+  is_unique_key: true
   dataset: dim_date
   name_column: date_id
   key_columns:
   - date_id
   sort_column: date_id
-  is_unique_key: true
   time_unit: day

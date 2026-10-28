@@ -1,8 +1,8 @@
 unique_name: dim_product
 object_type: dataset
 label: dim_product
-description: '24 banking products: Product Line of Business > Product Category > Product.'
-connection_id: Bank Enterprise Performance Connection
+description: 24 banking products across all lines of business.
+connection_id: Connection - Bank Enterprise Performance
 table: dim_product
 columns:
 - name: product_id

@@ -1,13 +1,13 @@
 unique_name: Product Dimension
 object_type: dimension
-label: Product
-description: 24 banking products across all lines of business. Product Line of Business > Product Category > Product.
+label: Product Dimension
+description: "24 banking products. Product Line of Business > Product Category > Product; spans all four lines of business."
 type: standard
 hierarchies:
 - unique_name: Product Hierarchy
   label: Product
+  description: "Product Line of Business > Product Category > Product."
   folder: Product Attributes
-  description: Product Line of Business > Product Category > Product.
   levels:
   - unique_name: Product Line of Business
   - unique_name: Product Category
@@ -22,17 +22,16 @@ level_attributes:
   - line_of_business
 - unique_name: Product Category
   label: Product Category
-  description: Product category, e.g. Checking, Mortgage, ACH, CRE, C&I.
+  description: "Product category (e.g. Checking, Mortgage, ACH, CRE, C&I)."
   dataset: dim_product
   name_column: product_category
   key_columns:
-  - line_of_business
   - product_category
 - unique_name: Product
   label: Product
   description: Product name.
+  is_unique_key: true
   dataset: dim_product
   name_column: product_name
   key_columns:
   - product_id
-  is_unique_key: true

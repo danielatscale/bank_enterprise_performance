@@ -4,7 +4,7 @@ label: Average LTV
 description: Average loan-to-value ratio at origination.
 calculation_method: average
 folder: Consumer Lending
-format: '#,##0.00'
+format: "#,##0.00"
+unrelated_dimensions_handling: repeat
 dataset: fact_loan_origination
 column: ltv
-unrelated_dimensions_handling: repeat

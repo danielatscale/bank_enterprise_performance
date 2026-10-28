@@ -1,8 +1,8 @@
 unique_name: dim_market
 object_type: dataset
 label: dim_market
-description: 'Metro markets in the bank''s 15-state footprint: Region > State > Market.'
-connection_id: Bank Enterprise Performance Connection
+description: Metro markets in the 15-state footprint, with state and region.
+connection_id: Connection - Bank Enterprise Performance
 table: dim_market
 columns:
 - name: market_id

@@ -1,15 +1,14 @@
 unique_name: Outstanding Balance
 object_type: metric
 label: Outstanding Balance
-description: 'Drawn facility balance. Point-in-time: latest monthly snapshot in the period; adds across facilities, never
-  across months.'
+description: "Drawn facility balance. Point-in-time: latest monthly snapshot in the period, adds across facilities, never across months."
 calculation_method: sum
 folder: CRE + Middle Market
-format: $#,##0
-dataset: fact_loan_facility_snapshot
-column: outstanding_balance
-unrelated_dimensions_handling: repeat
+format: "$#,##0"
 semi_additive:
   position: last
   relationships:
   - fact_loan_facility_snapshot_Date_Dimension
+unrelated_dimensions_handling: repeat
+dataset: fact_loan_facility_snapshot
+column: outstanding_balance

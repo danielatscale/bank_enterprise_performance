@@ -1,9 +1,8 @@
 unique_name: fact_deposit_snapshot
 object_type: dataset
 label: fact_deposit_snapshot
-description: Retail Deposits monthly snapshot (branch x product x segment x month, dated the 1st). Balances and account counts
-  are point-in-time.
-connection_id: Bank Enterprise Performance Connection
+description: Retail Deposits monthly snapshot (branch x product x segment x month, dated the 1st).
+connection_id: Connection - Bank Enterprise Performance
 table: fact_deposit_snapshot
 columns:
 - name: deposit_snapshot_id

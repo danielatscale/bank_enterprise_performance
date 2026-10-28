@@ -1,8 +1,7 @@
 unique_name: bank_metabase
 object_type: model
 label: Bank Enterprise Performance
-description: Bank-wide enterprise performance across Retail Deposits, Consumer Lending, Commercial Payments and CRE + Middle
-  Market, built from the Metabase business catalog.
+description: Four lines of business sharing conformed Date, Branch, Customer and Product dimensions, so each area can be analyzed alone or rolled up across the bank. Built from the Metabase catalog.
 visible: true
 relationships:
 - unique_name: fact_deposit_snapshot_Date_Dimension
@@ -153,13 +152,13 @@ metrics:
   folder: Consumer Lending
 - unique_name: Average LTV
   folder: Consumer Lending
-- unique_name: Delinquent Loan Count
-  folder: Consumer Lending
 - unique_name: 30 DPD Loan Count
   folder: Consumer Lending
 - unique_name: 60 DPD Loan Count
   folder: Consumer Lending
 - unique_name: 90+ DPD Loan Count
+  folder: Consumer Lending
+- unique_name: Delinquent Loan Count
   folder: Consumer Lending
 - unique_name: Fee Revenue
   folder: Commercial Payments
@@ -183,29 +182,29 @@ metrics:
   folder: CRE + Middle Market
 - unique_name: Facility Count
   folder: CRE + Middle Market
-- unique_name: EOM Balance Prior Year
-  folder: Retail Deposits
-- unique_name: EOM Balance YoY Growth %
-  folder: Retail Deposits
-- unique_name: Loan Amount Originated Prior Year
-  folder: Consumer Lending
-- unique_name: Loan Amount Originated YoY Growth %
+- unique_name: NPL Ratio
+  folder: CRE + Middle Market
+- unique_name: 90+ DPD Rate
   folder: Consumer Lending
 - unique_name: Any-DPD Rate
   folder: Consumer Lending
-- unique_name: 90+ DPD Rate
-  folder: Consumer Lending
 - unique_name: Average Loan Size
   folder: Consumer Lending
-- unique_name: Fee Revenue YTD
-  folder: Commercial Payments
-- unique_name: Fee Revenue Prior Year
-  folder: Commercial Payments
-- unique_name: Fee Revenue YoY Growth %
-  folder: Commercial Payments
+- unique_name: EOM Balance Prior Year
+  folder: Retail Deposits
+- unique_name: EOM Balance YoY Growth Pct
+  folder: Retail Deposits
 - unique_name: Outstanding Balance Prior Year
   folder: CRE + Middle Market
-- unique_name: Outstanding Balance YoY Growth %
+- unique_name: Outstanding Balance YoY Growth Pct
   folder: CRE + Middle Market
-- unique_name: NPL Ratio
-  folder: CRE + Middle Market
+- unique_name: Loan Amount Originated Prior Year
+  folder: Consumer Lending
+- unique_name: Loan Amount Originated YoY Growth Pct
+  folder: Consumer Lending
+- unique_name: Fee Revenue Prior Year
+  folder: Commercial Payments
+- unique_name: Fee Revenue YoY Growth Pct
+  folder: Commercial Payments
+- unique_name: Fee Revenue Year to Date
+  folder: Commercial Payments

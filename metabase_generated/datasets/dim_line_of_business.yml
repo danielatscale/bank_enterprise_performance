@@ -1,8 +1,8 @@
 unique_name: dim_line_of_business
 object_type: dataset
 label: dim_line_of_business
-description: The bank's lines of business under Consumer Bank / Commercial Bank.
-connection_id: Bank Enterprise Performance Connection
+description: "The bank's lines of business under Consumer Bank / Commercial Bank."
+connection_id: Connection - Bank Enterprise Performance
 table: dim_line_of_business
 columns:
 - name: lob_id

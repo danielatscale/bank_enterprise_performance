@@ -1,20 +1,20 @@
 unique_name: Vintage Dimension
 object_type: dimension
-label: Vintage
-description: Origination month (YYYY-MM) for vintage analysis.
+label: Vintage Dimension
+description: Origination month (YYYY-MM), for vintage analysis.
 is_degenerate: true
 hierarchies:
-- unique_name: Vintage Hierarchy
+- unique_name: Vintage
   label: Vintage
-  folder: Loan Attributes
+  description: Origination month (YYYY-MM), for vintage analysis.
+  folder: Consumer Lending Attributes
   levels:
   - unique_name: Vintage
 level_attributes:
 - unique_name: Vintage
   label: Vintage
-  description: Origination month (YYYY-MM) for vintage analysis.
+  description: Origination month (YYYY-MM), for vintage analysis.
   dataset: fact_loan_origination
   name_column: vintage
   key_columns:
   - vintage
-  sort_column: vintage

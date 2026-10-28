@@ -4,7 +4,7 @@ label: Loan Count
 description: Number of consumer loans booked.
 calculation_method: count non-null
 folder: Consumer Lending
-format: '#,##0'
+format: "#,##0"
+unrelated_dimensions_handling: repeat
 dataset: fact_loan_origination
 column: loan_id
-unrelated_dimensions_handling: repeat

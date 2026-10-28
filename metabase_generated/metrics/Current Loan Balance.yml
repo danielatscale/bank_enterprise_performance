@@ -1,10 +1,10 @@
 unique_name: Current Loan Balance
 object_type: metric
 label: Current Loan Balance
-description: Outstanding balance of originated loans as of the latest month.
+description: Outstanding balance of originated loans as of the latest month (June 2026).
 calculation_method: sum
 folder: Consumer Lending
-format: $#,##0
+format: "$#,##0"
+unrelated_dimensions_handling: repeat
 dataset: fact_loan_origination
 column: current_balance
-unrelated_dimensions_handling: repeat

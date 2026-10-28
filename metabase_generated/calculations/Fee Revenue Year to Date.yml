@@ -1,0 +1,6 @@
+unique_name: Fee Revenue Year to Date
+object_type: metric_calc
+label: Fee Revenue Year to Date
+description: Fee Revenue summed from the start of the calendar year through the current period.
+expression: "CASE WHEN ISEMPTY([Measures].[Fee Revenue]) THEN NULL\nELSE Aggregate(PeriodsToDate([Date Dimension].[Date Hierarchy].[Year], [Date Dimension].[Date Hierarchy].CurrentMember), [Measures].[Fee Revenue]) END"
+format: "$#,##0"

@@ -1,14 +1,14 @@
 unique_name: Deposit Account Count
 object_type: metric
 label: Deposit Account Count
-description: 'Open deposit accounts. Point-in-time: latest monthly snapshot in the period.'
+description: "Open deposit accounts. Point-in-time: latest monthly snapshot in the period, never added across months."
 calculation_method: sum
 folder: Retail Deposits
-format: '#,##0'
-dataset: fact_deposit_snapshot
-column: account_count
-unrelated_dimensions_handling: repeat
+format: "#,##0"
 semi_additive:
   position: last
   relationships:
   - fact_deposit_snapshot_Date_Dimension
+unrelated_dimensions_handling: repeat
+dataset: fact_deposit_snapshot
+column: account_count

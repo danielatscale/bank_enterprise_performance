@@ -2,8 +2,6 @@ version: 1.7
 unique_name: bank_metabase_catalog
 object_type: catalog
 label: Bank Enterprise Performance
-description: Enterprise performance for a US regional and commercial bank, generated from the Metabase business catalog. Four
-  lines of business (Retail Deposits, Consumer Lending, Commercial Payments, CRE + Middle Market) on conformed Date, Branch,
-  Customer and Product dimensions.
+description: Bank enterprise performance across Retail Deposits, Consumer Lending, Commercial Payments and CRE + Middle Market, generated from the Metabase business catalog.
 aggressive_agg_promotion: false
 build_speculative_aggs: false

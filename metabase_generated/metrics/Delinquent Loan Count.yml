@@ -1,10 +1,10 @@
 unique_name: Delinquent Loan Count
 object_type: metric
 label: Delinquent Loan Count
-description: 'Loans currently past due (30, 60 or 90+ days): delinquency_status <> ''Current''.'
+description: Loans currently past due (30, 60 or 90+ days).
 calculation_method: sum
 folder: Consumer Lending
-format: '#,##0'
+format: "#,##0"
+unrelated_dimensions_handling: repeat
 dataset: fact_loan_origination
 column: is_delinquent
-unrelated_dimensions_handling: repeat

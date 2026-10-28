@@ -1,13 +1,12 @@
 unique_name: Branch Dimension
 object_type: dimension
-label: Branch
-description: 'Branch geography: Region > State > Market (from the Market table) > Branch. Used by Retail Deposits and Consumer
-  Lending.'
+label: Branch Dimension
+description: "Branch geography Region > State > Market > Branch. State and region come from the Market table so every fact rolls up the same way."
 type: standard
 hierarchies:
 - unique_name: Branch Geography
   label: Branch Geography
-  description: Region > State > Market > Branch; geography comes from the branch's market.
+  description: "Region > State > Market > Branch."
   folder: Branch Attributes
   levels:
   - unique_name: Region
@@ -17,7 +16,7 @@ hierarchies:
     secondary_attributes:
     - unique_name: Branch Type
       label: Branch Type
-      description: 'Branch format: Financial Center, In-Store, or Private Bank Office.'
+      description: "Branch format: Financial Center, In-Store, or Private Bank Office."
       dataset: dim_branch
       name_column: branch_type
       key_columns:
@@ -25,14 +24,14 @@ hierarchies:
 level_attributes:
 - unique_name: Region
   label: Region
-  description: 'Geographic region: Great Lakes, Northeast, Pacific, Rocky Mountains.'
+  description: "Geographic region of the branch's market: Great Lakes, Northeast, Pacific, Rocky Mountains."
   dataset: dim_market
   name_column: region
   key_columns:
   - region
 - unique_name: State
   label: State
-  description: US state of the market.
+  description: "US state of the branch's market."
   dataset: dim_market
   name_column: state
   key_columns:
@@ -40,19 +39,19 @@ level_attributes:
 - unique_name: Market
   label: Market
   description: Metro market.
+  is_unique_key: true
   dataset: dim_market
   name_column: market_name
   key_columns:
   - market_id
-  is_unique_key: true
 - unique_name: Branch
   label: Branch
-  description: Branch name; lowest level of branch geography.
+  description: Branch. Lowest level of branch geography.
+  is_unique_key: true
   dataset: dim_branch
   name_column: branch_name
   key_columns:
   - branch_id
-  is_unique_key: true
 relationships:
 - from:
     dataset: dim_branch

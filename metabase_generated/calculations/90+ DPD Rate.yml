@@ -1,0 +1,6 @@
+unique_name: 90+ DPD Rate
+object_type: metric_calc
+label: 90+ DPD Rate
+description: "Share of loans 90+ days past due: 90+ DPD Loan Count / Loan Count, computed from the totals."
+expression: "Divide([Measures].[90+ DPD Loan Count], [Measures].[Loan Count])"
+format: percent

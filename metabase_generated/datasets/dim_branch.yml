@@ -1,8 +1,8 @@
 unique_name: dim_branch
 object_type: dataset
 label: dim_branch
-description: About 1,000 branches; each belongs to one market (geography comes from the market).
-connection_id: Bank Enterprise Performance Connection
+description: Branches (about 1,000). Each branch belongs to one market; geography comes from the Market table.
+connection_id: Connection - Bank Enterprise Performance
 table: dim_branch
 columns:
 - name: branch_id

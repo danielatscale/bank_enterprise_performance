@@ -1,10 +1,6 @@
 unique_name: EOM Balance Prior Year
 object_type: metric_calc
 label: EOM Balance Prior Year
-description: EOM Balance for the same period one year earlier (custom parallel period on the calendar hierarchy).
-expression: 'CASE WHEN ISEMPTY([Measures].[EOM Balance]) THEN NULL
-
-  ELSE (ParallelPeriod([Date Dimension].[Date Hierarchy].[Year], 1, [Date Dimension].[Date Hierarchy].CurrentMember), [Measures].[EOM
-  Balance]) END'
-format: $#,##0
-folder: Retail Deposits
+description: EOM Balance for the same period one year earlier (same calendar level, prior year).
+expression: "CASE WHEN ISEMPTY([Measures].[EOM Balance]) THEN NULL\nELSE (ParallelPeriod([Date Dimension].[Date Hierarchy].[Year], 1, [Date Dimension].[Date Hierarchy].CurrentMember), [Measures].[EOM Balance]) END"
+format: "$#,##0"

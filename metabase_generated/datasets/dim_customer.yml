@@ -1,8 +1,8 @@
 unique_name: dim_customer
 object_type: dataset
 label: dim_customer
-description: '58,000 customers: 50,000 consumer and 8,000 commercial clients.'
-connection_id: Bank Enterprise Performance Connection
+description: "Customers: 50,000 consumer and 8,000 commercial clients."
+connection_id: Connection - Bank Enterprise Performance
 table: dim_customer
 columns:
 - name: customer_id

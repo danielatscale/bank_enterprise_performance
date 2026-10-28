@@ -4,7 +4,7 @@ label: Facility Count
 description: Number of distinct credit facilities.
 calculation_method: count distinct
 folder: CRE + Middle Market
-format: '#,##0'
+format: "#,##0"
+unrelated_dimensions_handling: repeat
 dataset: fact_loan_facility_snapshot
 column: facility_id
-unrelated_dimensions_handling: repeat
